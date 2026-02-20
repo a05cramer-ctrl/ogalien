@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import photo from './AF05ED11-7B43-4BD7-A202-6F55547D31BD.png'
 import { BlockchainParticles } from './components/BlockchainParticles'
-import { MouseGlow } from './components/MouseGlow'
 import { NASAStarMap } from './components/NASAStarMap'
 import { NeonCharts } from './components/NeonCharts'
 import { Starfield } from './components/Starfield'
@@ -42,7 +41,6 @@ function App() {
         </section>
       </header>
       <div className="cosmic-bg" />
-      <MouseGlow />
       <Starfield />
       <NeonCharts />
       <BlockchainParticles />

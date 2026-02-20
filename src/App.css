@@ -123,14 +123,6 @@
   z-index: 0;
 }
 
-/* Mouse-following golden glow */
-.mouse-glow {
-  position: fixed;
-  inset: 0;
-  z-index: 0.3;
-  pointer-events: none;
-}
-
 /* Starfield overlay */
 .starfield {
   position: absolute;
