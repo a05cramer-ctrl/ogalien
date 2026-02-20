@@ -1,0 +1,493 @@
+/* Memecoin Hero — 80s Sci-Fi × Crypto */
+.memecoin-hero {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.header {
+  position: relative;
+  z-index: 4;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Buttons */
+.btn {
+  font-family: 'Exo 2', 'Segoe UI', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-x {
+  background: #000;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-x:hover {
+  background: #1a1a1a;
+  border-color: rgba(100, 255, 180, 0.5);
+  box-shadow: 0 0 20px rgba(100, 255, 180, 0.2);
+}
+
+.btn-copy {
+  background: linear-gradient(135deg, rgba(100, 255, 180, 0.2) 0%, rgba(167, 139, 250, 0.2) 100%);
+  color: #64ffb4;
+  border: 1px solid rgba(100, 255, 180, 0.4);
+}
+
+.btn-copy:hover {
+  background: linear-gradient(135deg, rgba(100, 255, 180, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%);
+  box-shadow: 0 0 24px rgba(100, 255, 180, 0.3);
+}
+
+.btn-copy.copied {
+  background: rgba(100, 255, 136, 0.25);
+  color: #64ffb4;
+  border-color: rgba(100, 255, 136, 0.6);
+}
+
+.header-title {
+  font-family: 'Exo 2', 'Segoe UI', system-ui, sans-serif;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin: 0;
+  background: linear-gradient(135deg, #64ffb4 0%, #a78bfa 50%, #c4d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Deep cosmic background — space */
+.cosmic-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 80% 50% at 50% 20%,
+      rgba(100, 80, 180, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 60% 80% at 80% 70%,
+      rgba(30, 20, 80, 0.4) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 50% 60% at 20% 90%,
+      rgba(20, 40, 90, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 100% 100% at 50% 50%,
+      rgba(10, 5, 30, 0.5) 0%,
+      transparent 70%
+    ),
+    linear-gradient(
+      180deg,
+      #030308 0%,
+      #0a0612 15%,
+      #0d0a1a 35%,
+      #080c18 60%,
+      #050810 100%
+    );
+  z-index: 0;
+}
+
+/* Mouse-following golden glow */
+.mouse-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0.3;
+  pointer-events: none;
+}
+
+/* Starfield overlay */
+.starfield {
+  position: absolute;
+  inset: 0;
+  z-index: 0.5;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* Neon chart overlays */
+.neon-charts {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.chart-lines {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  left: 0;
+  animation: chartFloat 8s ease-in-out infinite;
+}
+
+.chart-lines-2 {
+  top: 0;
+  bottom: auto;
+  animation-delay: -4s;
+  opacity: 0.6;
+}
+
+@keyframes chartFloat {
+  0%, 100% { opacity: 0.5; transform: translateY(0); }
+  50% { opacity: 0.8; transform: translateY(-10px); }
+}
+
+/* Blockchain particles */
+.blockchain-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Alien frame with green glow */
+.alien-frame {
+  position: relative;
+  border-radius: 50%;
+  padding: 8px;
+  margin: 0 auto;
+}
+
+.golden-glow {
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    rgba(218, 165, 32, 0.35) 0%,
+    rgba(184, 134, 11, 0.2) 40%,
+    rgba(139, 117, 0, 0.08) 60%,
+    transparent 70%
+  );
+  filter: blur(28px);
+  pointer-events: none;
+}
+
+.green-glow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    rgba(0, 255, 136, 0.25) 0%,
+    rgba(0, 255, 136, 0.08) 40%,
+    transparent 70%
+  );
+  filter: blur(20px);
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+.moonlight-overlay {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 60% 40% at 70% 20%,
+    rgba(192, 212, 255, 0.15) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.alien-photo {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow:
+    0 0 40px rgba(0, 255, 136, 0.2),
+    0 0 80px rgba(138, 43, 226, 0.15),
+    0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(100, 255, 180, 0.2);
+}
+
+/* Branding */
+.branding {
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  font-family: 'Exo 2', 'Segoe UI', system-ui, sans-serif;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+.title-main {
+  display: block;
+  background: linear-gradient(
+    135deg,
+    #c4d4ff 0%,
+    #a78bfa 50%,
+    #64ffb4 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 40px rgba(167, 139, 250, 0.5);
+}
+
+.title-sub {
+  display: block;
+  color: rgba(192, 212, 255, 0.95);
+  font-weight: 500;
+  font-size: 0.7em;
+  margin-top: 0.1em;
+}
+
+.tagline {
+  font-family: 'Exo 2', 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.25rem;
+  color: rgba(192, 212, 255, 0.85);
+  margin: 1rem auto 0.5rem;
+  max-width: 400px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.vibe {
+  font-family: 'Exo 2', 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: rgba(100, 255, 180, 0.7);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0.5rem auto 0;
+  text-align: center;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Section */
+.section {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 720px;
+  padding: 3rem 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Exo 2', 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-align: center;
+  margin: 0 0 2rem;
+  background: linear-gradient(135deg, #64ffb4 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* LORE Section */
+.lore-section {
+  margin-top: 2rem;
+}
+
+.lore-content {
+  background: rgba(10, 10, 30, 0.6);
+  border: 1px solid rgba(100, 255, 180, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.lore-content p {
+  font-family: 'Exo 2', 'Segoe UI', system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(192, 212, 255, 0.9);
+  margin: 0 auto 1.25rem;
+  max-width: 560px;
+  text-align: center;
+}
+
+.lore-content p:last-child {
+  margin: 0 auto;
+}
+
+.lore-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Video Section */
+.video-section {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(10, 10, 30, 0.8);
+  border: 1px solid rgba(100, 255, 180, 0.2);
+  box-shadow: 0 0 40px rgba(100, 255, 180, 0.1);
+}
+
+.video-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(26, 10, 46, 0.9) 0%, rgba(13, 27, 42, 0.9) 100%);
+}
+
+.video-placeholder p {
+  font-family: 'Exo 2', 'Segoe UI', system-ui, sans-serif;
+  color: rgba(192, 212, 255, 0.5);
+  letter-spacing: 0.1em;
+}
+
+/* NASA Star Map */
+.nasa-star-map-section {
+  max-width: 520px;
+}
+
+.nasa-star-map-container {
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.nasa-star-map-container:active {
+  cursor: grabbing;
+}
+
+.nasa-star-map {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.nasa-star-map-hint {
+  font-family: 'Exo 2', system-ui, sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  margin: 0.5rem 0 0;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-text {
+  font-family: 'Exo 2', 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: rgba(192, 212, 255, 0.8);
+  margin: 0 0 0.25rem;
+}
+
+.footer-subtext {
+  font-family: 'Exo 2', 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.75rem;
+  color: rgba(192, 212, 255, 0.5);
+  margin: 0;
+}
