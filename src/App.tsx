@@ -7,7 +7,7 @@ import { Starfield } from './components/Starfield'
 import { VideoSection } from './components/VideoSection'
 import './App.css'
 
-const CONTRACT_ADDRESS = '0x1234567890abcdef1234567890abcdef12345678'
+const CONTRACT_ADDRESS = '6MASHx4xPe6wGrif4AKmpBe55DkVy9FWQH6haR5Fpump'
 
 function App() {
   const [copied, setCopied] = useState(false)
@@ -24,7 +24,7 @@ function App() {
         <h1 className="header-title">OGALIEN</h1>
         <section className="header-actions">
           <a
-            href="https://x.com"
+            href="https://x.com/ogalien_dev"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-x"
@@ -70,7 +70,7 @@ function App() {
           </p>
           <section className="hero-actions">
             <a
-              href="https://x.com"
+              href="https://x.com/ogalien_dev"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-x"
@@ -120,7 +120,7 @@ function App() {
         <VideoSection />
         <section className="lore-actions">
           <a
-            href="https://x.com"
+            href="https://x.com/ogalien_dev"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-x"
