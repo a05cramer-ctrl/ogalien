@@ -6,7 +6,7 @@ const END_TIME = 115
 
 declare global {
   interface Window {
-    YT: {
+    YT?: {
       Player: new (
         elementId: string,
         options: {
@@ -16,17 +16,21 @@ declare global {
             onStateChange?: (event: { data: number }) => void
           }
         }
-      ) => { seekTo: (seconds: number, allowSeekAhead: boolean) => void; loadVideoById: (options: { videoId: string; startSeconds: number; endSeconds: number }) => void }
+      ) => YTPlayer
     }
     onYouTubeIframeAPIReady?: () => void
   }
+}
+
+interface YTPlayer {
+  loadVideoById: (options: { videoId: string; startSeconds: number; endSeconds: number }) => void
 }
 
 const YT_PLAYER_STATE_ENDED = 0
 
 export function VideoSection() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const playerRef = useRef<ReturnType<typeof window.YT.Player> | null>(null)
+  const playerRef = useRef<YTPlayer | null>(null)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
